@@ -7,4 +7,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    .container
+      = nav_bar do
+        = menu_group do
+          = menu_item 'KPI', kpi_path
+      = yield

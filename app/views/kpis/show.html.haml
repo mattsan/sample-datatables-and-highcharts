@@ -1,0 +1,60 @@
+.panel.panel-defaout
+  %table#table
+    %thead
+    %tfoot
+    %tbody
+
+:javascript
+  $(document).ready(function() {
+    $('#table').dataTable({
+      searching:
+        false,
+      footerCallback: function(tfoot, data, start, end, display) {
+        $(tfoot).find('tr').empty();
+        $(tfoot).find('tr').append('<td>合計</td><td>合計</td><td>合計</td><td>合計</td>');
+      },
+      data: [
+        {date: '2015-09-01', max: 27.5, min: 21.1, ave: 24.0},
+        {date: '2015-09-02', max: 29.0, min: 24.6, ave: 26.2},
+        {date: '2015-09-03', max: 30.4, min: 23.1, ave: 25.5},
+        {date: '2015-09-04', max: 29.2, min: 22.5, ave: 25.3},
+        {date: '2015-09-05', max: 29.1, min: 21.9, ave: 24.4},
+        {date: '2015-09-06', max: 29.0, min: 21.6, ave: 24.1},
+        {date: '2015-09-07', max: 26.8, min: 20.5, ave: 22.8},
+        {date: '2015-09-08', max: 21.2, min: 19.8, ave: 20.4},
+        {date: '2015-09-09', max: 26.1, min: 20.2, ave: 23.8},
+        {date: '2015-09-10', max: 24.6, min: 20.6, ave: 22.1},
+        {date: '2015-09-11', max: 27.5, min: 21.1, ave: 24.0},
+        {date: '2015-09-12', max: 29.0, min: 24.6, ave: 26.2},
+        {date: '2015-09-13', max: 30.4, min: 23.1, ave: 25.5},
+        {date: '2015-09-14', max: 29.2, min: 22.5, ave: 25.3},
+        {date: '2015-09-15', max: 29.1, min: 21.9, ave: 24.4},
+        {date: '2015-09-16', max: 29.0, min: 21.6, ave: 24.1},
+        {date: '2015-09-17', max: 26.8, min: 20.5, ave: 22.8},
+        {date: '2015-09-18', max: 21.2, min: 19.8, ave: 20.4},
+        {date: '2015-09-19', max: 26.1, min: 20.2, ave: 23.8},
+        {date: '2015-09-20', max: 24.6, min: 20.6, ave: 22.1},
+        {date: '2015-09-21', max: 27.5, min: 21.1, ave: 24.0},
+        {date: '2015-09-22', max: 29.0, min: 24.6, ave: 26.2},
+        {date: '2015-09-23', max: 30.4, min: 23.1, ave: 25.5},
+        {date: '2015-09-24', max: 29.2, min: 22.5, ave: 25.3},
+        {date: '2015-09-25', max: 29.1, min: 21.9, ave: 24.4},
+        {date: '2015-09-26', max: 29.0, min: 21.6, ave: 24.1},
+        {date: '2015-09-27', max: 26.8, min: 20.5, ave: 22.8},
+        {date: '2015-09-28', max: 21.2, min: 19.8, ave: 20.4},
+        {date: '2015-09-29', max: 26.1, min: 20.2, ave: 23.8},
+        {date: '2015-09-30', max: 24.6, min: 20.6, ave: 22.1},
+      ],
+      columns: [
+        {data: 'date', title: '日付'},
+        {data: 'max', title: '最高気温'},
+        {data: 'min', title: '最低気温'},
+        {data: 'ave', title: '平均気温'},
+      ]
+    });
+  });
+
+:css
+  table.dataTable thead .sorting_asc::after, table.dataTable thead .sorting_desc::after, table.dataTable thead .sorting::after {
+      content: '';
+  }
